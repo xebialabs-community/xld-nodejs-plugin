@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<type type="nodejs.Server" extends="generic.Container">
+		<property name="nodejsDeployLocation" required="true" description="The target location where node.js applications will be installed" />
+	</type>
+
+	<type type="nodejs.Module" extends="generic.ExecutedScript" deployable-type="nodejs.ModuleSpec"
+	      container-type="nodejs.Server">
+	    <generate-deployable type="nodejs.ModuleSpec" extends="generic.Resource"/>
+	    <property name="moduleName" description="The name of the module to be installed" />
+
+	    <property name="createScript" default="nodejs/installModule" hidden="true"/>
+	    <property name="modifyScript" default="nodejs/installModule" hidden="true"/>
+	    <property name="destroyScript" default="nodejs/removeModule" hidden="true"/>
+	</type>
+
+	<type type="nodejs.Application" extends="generic.ExecutedScriptWithDerivedArtifact" deployable-type="nodejs.ApplicationSpec"
+	      container-type="nodejs.Server">
+	    <generate-deployable type="nodejs.ApplicationSpec" extends="generic.Folder"/>
+	    <property name="jsFile" description="The name of the js file that should be started" />
+
+	    <property name="createScript" default="nodejs/installApplication" hidden="true"/>
+	    <property name="modifyScript" default="nodejs/modifyApplication" hidden="true"/>
+	    <property name="destroyScript" default="nodejs/removeApplication" hidden="true"/>
+	</type>
+
+	
+</synthetic>
