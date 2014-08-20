@@ -1,1 +1,15 @@
 language: java
+notifications:
+  hipchat:
+    rooms:
+      secure: Ql0WM1tVMCBmvVo/xXfkYf6HvMn7T9iWTWpUiWITDRwE2JjZ027Em1s31M6T1q9tmTRy1wjWmnlOqVWklIzRaJtxL/u/GImGPV9LIiYA4vkhY/si23xjN5xqqVKy2afpjx6i1E+GoFftTRafwleUdVb5Cz9nvMgvAMiVl1P+Xlc=
+deploy:
+  provider: releases
+  api_key:
+    secure: SHRK/EVUsZ80NahgPuSQdPGttz3ZNtBjO/OvRdF8HO3DyCNm3FM1Fgt5EZ8wst6FDh/dXLJ4SF2hvJqpxwHh8yp2LL4sgCHjPFq57hwMNu+zEwS/subTZtQtX63ZAac70nZSq1YJF4dlwKL3Et23iW5Y61KYzE4Rmz+ZFYTNh7Q=
+  file: build/libs/nodejs-plugin-1.0.jar
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: true 
+    repo: xebialabs-community/nodejs-plugin
