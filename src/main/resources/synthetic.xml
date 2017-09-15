@@ -15,6 +15,7 @@
 
 	<type type="nodejs.Server" extends="generic.Container">
 		<property name="nodejsDeployLocation" required="true" description="The target location where node.js applications will be installed" />
+		<property name="nodejsLocation" required="true" default="/usr/local/bin/node" description="The location where nodejs application can be found" />
 	</type>
 
 	<type type="nodejs.Module" extends="generic.ExecutedScript" deployable-type="nodejs.ModuleSpec"

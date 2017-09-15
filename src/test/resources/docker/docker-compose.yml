@@ -1,0 +1,14 @@
+nodejs:
+  image: xebialabs/xl-docker-demo-node:v8.5.0.1
+  ports:
+    - "18081:8081"
+
+xld:
+  image: xebialabs/xld_dev_run:v7.1.0.1
+  volumes:
+    - ~/xl-licenses:/license
+    - ./../../../../:/data
+  links:
+    - nodejs
+  ports:
+   - "14516:4516"
