@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2017 XEBIALABS
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+<xl:export xmlns:xl="http://www.xebialabs.com/xl-export">
+  <xl:metadata>
+    <xl:exported-by>admin</xl:exported-by>
+    <xl:exported-at>2017-09-15T23:07:39.866+0000</xl:exported-at>
+    <xl:exported-format-version>7.1.0</xl:exported-format-version>
+    <xl:encryption-key-fingerprint>f6094d333c0736339884d1fe38d9c54e14019ac9</xl:encryption-key-fingerprint>
+  </xl:metadata>
+  <xl:exported-configuration-items exported-root-id="/">
+    <udm.DeploymentPackage id="Applications/helloworld/1.0.0" created-by="admin" created-at="2017-09-15T22:25:01.337+0000" last-modified-by="admin" last-modified-at="2017-09-15T22:25:01.337+0000">
+      <orchestrator />
+      <applicationDependencies />
+      <dependencyResolution>LATEST</dependencyResolution>
+      <undeployDependencies>false</undeployDependencies>
+    </udm.DeploymentPackage>
+    <nodejs.ApplicationSpec id="Applications/helloworld/1.0.0/helloword" created-by="admin" created-at="2017-09-15T22:25:34.908+0000" last-modified-by="admin" last-modified-at="2017-09-15T22:25:34.908+0000" file="Applications/helloworld/1.0.0/helloword/node.zip">
+      <tags />
+      <scanPlaceholders>true</scanPlaceholders>
+      <placeholders />
+      <checksum>10a88e10d6619d577d4f050af247f3a327c9de0d</checksum>
+      <fileUri>jcr:node.zip</fileUri>
+      <jsFile>main.js</jsFile>
+    </nodejs.ApplicationSpec>
+    <udm.Application id="Applications/helloworld" created-by="admin" created-at="2017-09-15T22:24:53.762+0000" last-modified-by="admin" last-modified-at="2017-09-15T22:25:01.423+0000">
+      <lastVersion>1.0.0</lastVersion>
+    </udm.Application>
+    <udm.Environment id="Environments/node" created-by="admin" created-at="2017-09-15T22:24:33.752+0000" last-modified-by="admin" last-modified-at="2017-09-15T22:24:37.600+0000">
+      <members>
+        <ci ref="Infrastructure/nodejs/nodejs server" />
+      </members>
+      <dictionaries />
+      <triggers />
+    </udm.Environment>
+    <overthere.SshHost id="Infrastructure/nodejs" created-by="admin" created-at="2017-09-15T22:19:44.018+0000" last-modified-by="admin" last-modified-at="2017-09-15T22:20:01.274+0000">
+      <tags />
+      <os>UNIX</os>
+      <puppetPath>/usr/local/bin</puppetPath>
+      <connectionType>SCP</connectionType>
+      <address>nodejs</address>
+      <port>22</port>
+      <username>root</username>
+      <password>{b64}h5nRb+E/HjfPpC+yBcurNA==</password>
+    </overthere.SshHost>
+    <nodejs.Server id="Infrastructure/nodejs/nodejs server" created-by="admin" created-at="2017-09-15T22:20:24.023+0000" last-modified-by="admin" last-modified-at="2017-09-15T22:21:36.004+0000">
+      <tags />
+      <envVars />
+      <nodejsDeployLocation>/usr/src/app</nodejsDeployLocation>
+    </nodejs.Server>
+  </xl:exported-configuration-items>
+</xl:export>

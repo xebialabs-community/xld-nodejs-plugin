@@ -1,4 +1,5 @@
 .gradle
 .idea
 build
+supervisord.*
 xld-nodejs-plugin.iml
