@@ -11,7 +11,7 @@
 
 echo "Processing ${step.uploadedArtifactPath}"
 
-FOLDER_DIR=`basename ${step.uploadedArtifactPath}`
+FOLDER_DIR=$(basename ${step.uploadedArtifactPath})
 
 cp -r ${step.uploadedArtifactPath} ${deployed.container.nodejsDeployLocation}
 
