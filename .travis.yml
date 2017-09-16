@@ -6,11 +6,11 @@ notifications:
 deploy:
   provider: releases
   api_key:
-    secure: SHRK/EVUsZ80NahgPuSQdPGttz3ZNtBjO/OvRdF8HO3DyCNm3FM1Fgt5EZ8wst6FDh/dXLJ4SF2hvJqpxwHh8yp2LL4sgCHjPFq57hwMNu+zEwS/subTZtQtX63ZAac70nZSq1YJF4dlwKL3Et23iW5Y61KYzE4Rmz+ZFYTNh7Q=
+    secure: SSQzk9Igq6SeAmNXipVNzxp5qt7oNbUly3fChH+f4Yd0qoNxka1KpGGALrM3kb+wpS5voXjtdRjpPh/ad+yabLOM6rfTIUOoZjFGchxW49f5sgPjIZpiKcO9BO9ZbnBP/0ToUGDvarJPGpINnmiDEFXLS/YOtfHJBr9NwUAMoBc=
   file_glob: true
   file: build/distributions/*
   skip_cleanup: true
   on:
     all_branches: true
-    tags: true 
-    repo: xebialabs-community/nodejs-plugin
+    tags: true
+    repo: xebialabs-community/xld-nodejs-plugin
