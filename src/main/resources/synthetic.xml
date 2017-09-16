@@ -11,32 +11,32 @@
 
 -->
 
-<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd"
+           xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-	<type type="nodejs.Server" extends="generic.Container">
-		<property name="nodejsDeployLocation" required="true" description="The target location where node.js applications will be installed" />
-		<property name="nodejsLocation" required="true" default="/usr/local/bin/node" description="The location where nodejs application can be found" />
-	</type>
+    <type type="nodejs.Server" extends="udm.BaseContainer">
+        <property name="host" kind="ci" referenced-type="overthere.Host" as-containment="true"
+                  description="The host where the node application will be running."/>
 
-	<type type="nodejs.Module" extends="generic.ExecutedScript" deployable-type="nodejs.ModuleSpec"
-	      container-type="nodejs.Server">
-	    <generate-deployable type="nodejs.ModuleSpec" extends="generic.Resource"/>
-	    <property name="moduleName" description="The name of the module to be installed" />
+        <property name="nodejsDeployLocation" required="true"
+                  description="The target location where node.js applications will be installed"/>
+        <property name="nodejsLocation" required="true" default="/usr/local/bin/node"
+                  description="The location where nodejs application can be found"/>
+        <property name="npmLocation" required="true" default="/usr/local/bin/npm"
+                  description="The location where npm application can be found"/>
+    </type>
 
-	    <property name="createScript" default="nodejs/installModule" hidden="true"/>
-	    <property name="modifyScript" default="nodejs/installModule" hidden="true"/>
-	    <property name="destroyScript" default="nodejs/removeModule" hidden="true"/>
-	</type>
+    <type type="nodejs.Module" extends="udm.BaseDeployed" deployable-type="nodejs.ModuleSpec"
+          container-type="nodejs.Server">
+        <generate-deployable type="nodejs.ModuleSpec" extends="udm.BaseDeployable"/>
+        <property name="moduleName" description="The name of the module to be installed"/>
+    </type>
 
-	<type type="nodejs.Application" extends="generic.ExecutedScriptWithDerivedArtifact" deployable-type="nodejs.ApplicationSpec"
-	      container-type="nodejs.Server">
-	    <generate-deployable type="nodejs.ApplicationSpec" extends="generic.Folder"/>
-	    <property name="jsFile" description="The name of the js file that should be started" />
+    <type type="nodejs.Application" extends="udm.BaseDeployedArtifact" deployable-type="nodejs.ApplicationSpec"
+          container-type="nodejs.Server">
+        <generate-deployable type="nodejs.ApplicationSpec" extends="udm.BaseDeployableFolderArtifact"/>
+        <property name="jsFile" description="The name of the js file that should be started"/>
+    </type>
 
-	    <property name="createScript" default="nodejs/installApplication" hidden="true"/>
-	    <property name="modifyScript" default="nodejs/modifyApplication" hidden="true"/>
-	    <property name="destroyScript" default="nodejs/removeApplication" hidden="true"/>
-	</type>
 
-	
 </synthetic>
