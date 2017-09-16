@@ -54,7 +54,6 @@
     </overthere.SshHost>
     <nodejs.Server id="Infrastructure/nodejs/nodejs server" created-by="admin" created-at="2017-09-15T22:20:24.023+0000" last-modified-by="admin" last-modified-at="2017-09-15T22:21:36.004+0000">
       <tags />
-      <envVars />
       <nodejsDeployLocation>/usr/src/app</nodejsDeployLocation>
     </nodejs.Server>
   </xl:exported-configuration-items>

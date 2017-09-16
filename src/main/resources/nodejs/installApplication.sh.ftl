@@ -10,12 +10,12 @@
 #
 set -e
 
-echo "Processing ${step.uploadedArtifactPath}"
+echo "Processing ${deployed.file.path}"
 
-FOLDER_DIR=$(basename ${step.uploadedArtifactPath})
+FOLDER_DIR=$(basename ${deployed.file.path})
 mkdir -p ${deployed.container.nodejsDeployLocation}
 
-cp -r ${step.uploadedArtifactPath} ${deployed.container.nodejsDeployLocation}
+cp -r ${deployed.file.path} ${deployed.container.nodejsDeployLocation}
 
 cd ${deployed.container.nodejsDeployLocation}/$FOLDER_DIR
 
