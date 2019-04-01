@@ -21,5 +21,5 @@ mkdir -p ${deployed.container.nodejsDeployLocation}
 cp -r ${deployed.file.path} ${deployed.container.nodejsDeployLocation}
 
 cd ${deployed.container.nodejsDeployLocation}/$FOLDER_DIR
-
+${deployed.container.npmLocation} install
 nohup ${deployed.container.nodejsLocation} ${deployed.jsFile} >/dev/null 2>&1 &
